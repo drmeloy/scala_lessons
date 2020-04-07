@@ -10,10 +10,9 @@ object Dad extends App {
       case _ => 3.0
     }
 
-  val dad = Dad
-  println(dad.rate(Film("Clint Eastwood")))
-  println(dad.rate(Film("John McTiernan")))
-  println(dad.rate(Film("Dan Meloy")))
+  println(Dad.rate(Film("Clint Eastwood")))
+  println(Dad.rate(Film("John McTiernan")))
+  println(Dad.rate(Film("Dan Meloy")))
 }
 
 
