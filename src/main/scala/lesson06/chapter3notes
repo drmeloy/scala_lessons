@@ -1,0 +1,7 @@
+Chapter 3:
+- Classes are a template for constructing objects. Given a class we can make many objects that have the same type and share common properties.
+- A class is a template for creating objects that have similar methods and fields. In Scala, a class also defines a type, and objects created from a class all share the same type.
+- Prefixing class parameters with a val (to make them public) is essentially creating that as a field on that class (it's a shorthand!)
+- An object can me "called" like a function if it has a method called apply
+- There is a special shorthand for apply: foo.apply(args) becomes foo(args)
+-
