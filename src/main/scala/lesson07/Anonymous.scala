@@ -16,11 +16,11 @@ object Visitor {
   }
 }
 
-case class Anonymous(id: String, createdAt: Date) extends Visitor
+final case class Anonymous(id: String, createdAt: Date) extends Visitor
 
-case class Administrator(id: String, createdAt: Date) extends Visitor
+final case class Administrator(id: String, createdAt: Date) extends Visitor
 
-case class User(id: String, email: String, createdAt: Date) extends Visitor
+final case class User(id: String, email: String, createdAt: Date) extends Visitor
 
 object Main extends App() {
   val visitor0 = User("1234", "email@email.com", new Date())
