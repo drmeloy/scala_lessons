@@ -20,7 +20,7 @@ tupe1._1
 tupe1 match {
   case (_, a, _) if (a.length == 3) => println(a)
 }
-val people = List(("Dan", 31), ("Travis", 31))
+val people = List(("Dan", 31), ("Travis", 31), ("Dan", 32))
 val ages = people.map { case (_, a) => a }
 def stringOrInt(bool: Boolean): Either[String, Int] =
   if (bool) Left("True!")
@@ -38,3 +38,5 @@ final case class MyRight[A, B](b: B) extends MyEither[A, B]
 
 people.find { case (name, _) => name == "Maddie" }
 people.find { case (name, _) => name == "Dan" }
+people.filter { case (name, _) => name == "Dan" }
+people.filter(_._1 == "Dan")
