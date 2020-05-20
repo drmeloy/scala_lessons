@@ -18,18 +18,23 @@ Some(2) ++ List(1)
 Some(Some(3)) ++ List(Some(2))
 
 sealed trait MyEither[A, B]
-
 final case class MyLeft[A, B](a: A) extends MyEither[A, B]
-
 final case class MyRight[A, B](b: B) extends MyEither[A, B]
 
 sealed trait MyOption[T] {
-  def myMap[U](f: T => U)
+  def myMap[U](f: T => U): MyOption[U] =
+    this match {
+      case MySome(v) => MySome(f(v))
+      case MyNone() => MyNone()
+    }
 }
 
 final case class MySome[T](value: T) extends MyOption[T]
 
 final case class MyNone[T]() extends MyOption[T]
+
+val op1 = MySome(2)
+op1.myMap(_ * 2)
 
 def myFind(list: List[Int], target: Int => Boolean): MyOption[Int] =
   list.find(target) match {
