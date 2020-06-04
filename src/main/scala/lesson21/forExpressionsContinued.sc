@@ -98,3 +98,8 @@ case class Person(name: String, age: Int)
 
 val people = List(Person("Travis", 32), Person("Dan", 31))
 people.map { case Person(_, age) => age }
+
+val eightiesFilms = for {
+  director <- directors
+  film <- director.films if film.yearOfRelease > 1979 && film.yearOfRelease < 1990
+} yield film
